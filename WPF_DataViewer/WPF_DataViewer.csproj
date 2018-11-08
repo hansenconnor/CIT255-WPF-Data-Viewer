@@ -66,6 +66,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="BLL\PublicationBLL.cs" />
     <Compile Include="DAL\IDataService.cs" />
     <Compile Include="DAL\JsonDataService.cs" />
     <Compile Include="MainWindow.xaml.cs">

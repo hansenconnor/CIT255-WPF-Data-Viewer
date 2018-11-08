@@ -10,10 +10,11 @@ using System.Configuration;
 using Newtonsoft.Json;
 using System.Web;
 using Newtonsoft.Json.Linq;
+using System.Collections.ObjectModel;
 
 namespace WPF_DataViewer.DAL
 {
-    class JsonDataService :IDataService
+    class JsonDataService : IDataService
     {
         private string _apiBaseUrl;
 
@@ -21,7 +22,7 @@ namespace WPF_DataViewer.DAL
         /// read the json response and load a list of publications
         /// </summary>
         /// <returns>list of users</returns>
-        public List<MediumPublication> ReadAll()
+        public ObservableCollection<MediumPublication> GetPublications()
         {
 
             // Get authorization token for use in request header
@@ -79,7 +80,7 @@ namespace WPF_DataViewer.DAL
             var publications = JObject.Parse(html);
 
             // Create a list to store the publications
-            List<MediumPublication> MediumPublications = new List<MediumPublication>();
+            ObservableCollection<MediumPublication> MediumPublications = new ObservableCollection<MediumPublication>();
 
             foreach (var publication in publications["data"])
             {
