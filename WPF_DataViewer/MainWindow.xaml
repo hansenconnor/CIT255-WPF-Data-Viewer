@@ -11,6 +11,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <ListBox x:Name="_list" DisplayMemberPath="Name" />
+        <ListBox x:Name="_list" DisplayMemberPath="name" />
     </Grid>
 </Window>
