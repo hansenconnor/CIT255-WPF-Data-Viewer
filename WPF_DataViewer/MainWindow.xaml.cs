@@ -60,6 +60,20 @@ namespace WPF_DataViewer
             _list.ItemsSource = _publications;
         }
 
+        /// <summary>
+        /// Display the list item details in a new window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Instantiate new detail window and pass the selected publication
+            Window detailWindow = new DetailWindow(_list.SelectedItem as MediumPublication);
+
+            // Show the detail window
+            detailWindow.Show();
+        }
+
 
 
 

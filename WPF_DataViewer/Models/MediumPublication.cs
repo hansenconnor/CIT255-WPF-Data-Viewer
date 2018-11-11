@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_DataViewer
 {
-    class MediumPublication
+    public class MediumPublication
     {
         public string Id { get; set; }
         public string name { get; set; }

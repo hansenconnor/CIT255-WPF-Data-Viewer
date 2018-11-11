@@ -9,8 +9,9 @@
     <Grid x:Name="ListWindow">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="_list" DisplayMemberPath="name" />
+        <ListBox x:Name="_list" DisplayMemberPath="name" ItemsSource="{Binding Items}"/>
+        <Button Content="Show Details" Grid.Row="1" Command="{Binding showDetails}" CommandParameter="{Binding ElementName=_list, Path=SelectedItems}" Click="Button_Click" />
     </Grid>
 </Window>
