@@ -39,33 +39,40 @@ namespace WPF_DataViewer
 
             // Add the description to the Window
             _publicationDescription.Inlines.Add(new Run(_selectedPublication.description));
+
             // Add the title
             _publicationTitle.Content = _selectedPublication.name;
+
             // Add the URL
             _publicationLink.Inlines.Add(new Run(_selectedPublication.url));
             Uri publicationLink = new Uri(_selectedPublication.url);
             _publicationLink.NavigateUri = publicationLink;
 
-            
-
-
-
+            // Add the image
             var publicationImage = new Image();
             var fullFilePath = _selectedPublication.imageUrl;
-
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
             bitmap.EndInit();
-
             _publicationImage.Source = bitmap;
 
         }
 
+        /// <summary>
+        /// Handle publication link click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
+        }
+
+        private void _closeWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
