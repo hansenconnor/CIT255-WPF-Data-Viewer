@@ -22,7 +22,7 @@
             </Grid.ColumnDefinitions>
             <!-- Search Box and Button -->
             <TextBox x:Name="_searchBox" Grid.Row="0" Grid.Column="0" Height="Auto" />
-            <Button Content="Search" Grid.Column="0" Margin="127,0,0,0"/>
+            <Button Content="Search" Grid.Column="0" Margin="127,0,0,0" Click="Button_Click_2"/>
 
             <!-- Filter Control -->
             <Button Content="Filter" Grid.Column="1" Margin="10.5,0,0,0" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="110"/>
@@ -31,7 +31,7 @@
             <Button Content="Sort" Grid.Column="1" Margin="126.5,0,0.5,0"/>
 
             <!-- Help Button -->
-            <Button Content="Help" Grid.Column="2" Margin="126.5,0,0,0"/>
+            <Button Content="Help" Grid.Column="2" Margin="126.5,0,0,0" Click="Button_Click_1"/>
 
         </Grid>
         <Label Content="Medium Publication Viewer" FontSize="24" Margin="10,94,0,-116" Grid.Row="2" HorizontalAlignment="Left" Width="743" />

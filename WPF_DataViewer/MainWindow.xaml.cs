@@ -70,7 +70,7 @@ namespace WPF_DataViewer
             // Null check
             if (_list.SelectedItem == null)
             {
-                MessageBox.Show("Error", "Please select a publication to view!");
+                MessageBox.Show("Please select a publication to view!", "Error");
                 return;
             }
 
@@ -79,6 +79,52 @@ namespace WPF_DataViewer
 
             // Show the detail window
             detailWindow.Show();
+        }
+
+
+        /// <summary>
+        /// Display help window when the Help button is clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window HelpWindow = new HelpWindow();
+            HelpWindow.Show();
+        }
+
+        /// <summary>
+        /// Get and display the search results when the search button is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            // Get the search query
+            var searchQuery = _searchBox.Text;
+
+            // Check if empty
+            if (string.IsNullOrWhiteSpace(searchQuery))
+            {
+                MessageBox.Show("Please enter a valid query...", "Error");
+                return;
+            }
+
+            // Get search results
+            var searchedList = _publications.Where(p => p.name.ToUpper().Contains(searchQuery.ToUpper())).ToList();
+
+            // Null check
+            if (searchedList == null)
+            {
+                MessageBox.Show("No results to display. Update your search query and try again.", "Not Found");
+                // Display initial result set
+                _list.ItemsSource = _publications;
+                return;
+
+            }
+
+            // Search results not empty => display results into listbox
+            _list.ItemsSource = searchedList;
         }
 
 

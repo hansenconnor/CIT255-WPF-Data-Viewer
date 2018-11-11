@@ -12,6 +12,6 @@
         <Label Content="3. To sort publications alphabetically, by name, click the Sort by Name button." Height="Auto" Margin="10,105,10.5,0" VerticalAlignment="Top"/>
         <Label Content="4. To search for a specific publication, enter your search phrase in the search box, then click Search." Height="Auto" Margin="10,136,10.5,0" VerticalAlignment="Top"/>
         <Label Content="5. To exit the application, click the Exit button or close the window." Height="Auto" Margin="10,167,10.5,0" VerticalAlignment="Top"/>
-        <Button Content="Close" Margin="10,0,0,10.5" HorizontalAlignment="Left" Width="129" Height="44" VerticalAlignment="Bottom" />
+        <Button Content="Close" Margin="10,0,0,10.5" HorizontalAlignment="Left" Width="129" Height="44" VerticalAlignment="Bottom" Click="Button_Click" />
     </Grid>
 </Window>
