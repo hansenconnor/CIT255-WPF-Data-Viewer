@@ -128,6 +128,51 @@ namespace WPF_DataViewer
         }
 
 
+        /// <summary>
+        /// Close the application and all open/active windows when the Exit button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (this.Cursor != Cursors.Wait)
+            {
+                Mouse.OverrideCursor = Cursors.AppStarting;
+            }
+            Cursor activeCursor;
+            activeCursor = Cursors.AppStarting;
+            Mouse.OverrideCursor = activeCursor;
+            Application.Current.Shutdown(); // Close all windows
+            Environment.Exit(0); // Exit application
+        }
+
+
+        /// <summary>
+        /// Filter the list box items by the publication name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            // Sort is static => Users should choose which parameter they wish to sort on
+            var sortedList = _publications.OrderBy(p => p.name).ToList();
+            _list.ItemsSource = sortedList;
+        }
+
+
+        /// <summary>
+        /// Sort the list box items by the publication name where the name is NMC CIT255
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            // Filter is static => should be dynamic in future version.
+            var filteredList = _publications.Where(p => p.name == "NMC CIT 255").ToList();
+            _list.ItemsSource = filteredList;
+        }
+
+
 
 
 
