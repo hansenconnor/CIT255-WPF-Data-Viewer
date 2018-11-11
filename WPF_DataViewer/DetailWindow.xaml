@@ -16,9 +16,16 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label x:Name="_publicationTitle" Content="Hello World" Grid.Column="1" FontFamily="Lato" FontSize="24" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Foreground="DeepSkyBlue"><Hyperlink x:Name="_publicationLink" RequestNavigate="Label_RequestNavigate"></Hyperlink></TextBlock>
+            <TextBlock x:Name="_publicationDescription" Grid.Row="2" Grid.Column="1" Height="Auto" TextWrapping="Wrap"/>
+        </Grid>
         <Image x:Name="_publicationImage" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" />
-        <Label x:Name="_publicationTitle" Content="Hello World" Grid.Column="1" />
-        <Label x:Name="_publicationLink" Content="Link" Hyperlink.RequestNavigate="Label_RequestNavigate" Grid.Column="1" Grid.Row="1" />
-        <TextBlock x:Name="_publicationDescription" Grid.Row="2" Grid.Column="1"/>
     </Grid>
 </Window>
