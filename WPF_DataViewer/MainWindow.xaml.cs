@@ -67,6 +67,13 @@ namespace WPF_DataViewer
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Null check
+            if (_list.SelectedItem == null)
+            {
+                MessageBox.Show("Error", "Please select a publication to view!");
+                return;
+            }
+
             // Instantiate new detail window and pass the selected publication
             Window detailWindow = new DetailWindow(_list.SelectedItem as MediumPublication);
 

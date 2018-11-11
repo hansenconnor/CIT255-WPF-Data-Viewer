@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_DataViewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="438.867" Width="766.992">
+        Title="MainWindow"
+        MinWidth="768"
+        MinHeight="535">
     <Grid x:Name="ListWindow">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="2" Margin="10,44,10,-44">
+        <Grid Grid.Row="2" Margin="10,142,10,-142">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -32,7 +34,8 @@
             <Button Content="Help" Grid.Column="2" Margin="126.5,0,0,0"/>
 
         </Grid>
-        <ListBox x:Name="_list" Grid.Row="2" DisplayMemberPath="name" ItemsSource="{Binding Items}" Margin="10,104,10,-214"/>
-        <Button Content="Show Details" Grid.Row="2" Command="{Binding showDetails}" CommandParameter="{Binding ElementName=_list, Path=SelectedItems}" Click="Button_Click" Margin="10,240,612,-250" />
+        <Label Content="Medium Publication Viewer" FontSize="24" Margin="10,94,0,-116" Grid.Row="2" HorizontalAlignment="Left" Width="743" />
+        <ListBox x:Name="_list" Grid.Row="2" DisplayMemberPath="name" ItemsSource="{Binding Items}" Margin="10,202,10,-312"/>
+        <Button Content="Show Details" Grid.Row="2" Command="{Binding showDetails}" CommandParameter="{Binding ElementName=_list, Path=SelectedItems}" Click="Button_Click" Margin="10,338,0,-348" HorizontalAlignment="Left" Width="140" />
     </Grid>
 </Window>
